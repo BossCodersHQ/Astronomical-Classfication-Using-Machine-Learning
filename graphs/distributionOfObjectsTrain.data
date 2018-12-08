@@ -1,0 +1,13 @@
+# creates a graph showing the distribution of objects in training data
+datas = train_meta.groupby('target')['object_id'].count()
+temp = [i for i in datas.index.values]
+galClass = [6,16,53,65,92]
+c = ["k" if i in galClass else "r" for i in temp]
+x = np.arange(datas.size)
+plt.figure(figsize=(7,5))
+plt.title("Distribution of Objects in Training Data")
+plt.bar(2*x,datas,1.9,color=c, alpha = 0.8)
+plt.ylabel("Num of Objects")
+plt.xlabel("Object Class")
+plt.xticks(2*x, temp,rotation=60)
+plt.show()

@@ -1,0 +1,7 @@
+# graph showing the distribution between galactic and extragalactic objects in test data
+plt.figure(figsize=(5, 3))
+plt.bar(["Galactic","Extra Galacatic"],[numGalactic,numExtra])
+plt.gca().set_yscale("log")
+plt.ylabel("Number of Objects")
+plt.xlabel("Object Type")
+plt.show()
